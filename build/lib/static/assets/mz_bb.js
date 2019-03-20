@@ -145,20 +145,13 @@ $(document).ready(function(){
     });
 
     var last_nlp_update = -1;
-//    $("input.addtxtmultiResult").keyup(function(){
-    	
-	//$("#queueform").submit(function(e){
-	$("#searchbutton").click(function(){
-	//function searchResults(){
-	
-        //e.preventDefault();
-        var query = $(".addtxt").val();
-	//var query = $(this).val();
+    $("input.addtxt").keyup(function(){
+        var query = $(this).val();
         var $results = $(".results");
         if(query == ""){
             $results.html("");
             return;
-        }
+	   }
         var query_time = +(new Date());
         nlp_endpoint.deferQuery({"cmd": "suggest", "args": {"message": query}}, function(response){
             if(!$(".addtxt").val()){

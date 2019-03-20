@@ -6,7 +6,7 @@
     "static_path": "$HOME/musicazoo/static/",
     "static_prefix": "/",
     "wsgi_prefix": "/",
-    "youtube_api_key": "AIzaSyClDmA-Rrkz3JhQNDhPrszUimLtu0KOy5A",
+    "youtube_api_key": "AIzaSyAs5vKVkTy_wdwTGKJj1m_BzVBArIMNqQo",
     "fortune_args": ["-s"],
     "ports" : {
         "queue": 5580,

@@ -1,14 +1,14 @@
 <html>
 <head>
-    <title>Musicpi</title>
+    <title>Musicazoo!</title>
     <script type="text/javascript" src="./assets/underscore.js"></script>
     <script type="text/javascript" src="./assets/underscore.string.min.js"></script>
     <script type="text/javascript" src="./assets/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/jquery-ui.js"></script>
     <script type="text/javascript" src="./assets/backbone.js"></script>
     <script type="text/javascript" src="./assets/handlebars.js"></script>
-    <script type="text/javascript" src="./assets/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" src="./assets/shmooze.js"></script>
+    <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
     <script type="text/javascript">
         window.volume = 45;
         window.no_autorefresh = false;
@@ -142,6 +142,8 @@
         Logo
         {{ status }}
     </script>
+    <script type="text/javascript" src="./assets/mz_common.js"></script>
+    <script type="text/javascript" src="./assets/mz_mirror.js"></script>
     <script type="text/javascript" src="./assets/mz_bb.js"></script>
     <!--
     <link rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css">
@@ -152,58 +154,16 @@
 </head>
 <body>
     <div class="content">
-        <!-- Help -->
-        <div class="help-sidebar">
-            <h4>Help</h4>
-            <p>Based off of Musicazoo</p>
-	    <p>Ask ixa if something breaks &lt3 </p>
-        </div>
-
-        <h1 class="title">Musicpi</h1>
 
         <div class="controls">
-            <a href="#" class="help">Help</a>
-            <a href="http://github.com/zbanks/musicazoo/issues" >Bugs</a>
-            <a href="/mirror.html" >Mirror</a>
-            <a href="/mztop.html" >Top</a>
+            <a href="#" >Help</a>
             <a href="#" class="clear">Clear</a>
             <a class="nohover">Volume:</a>
         </div>
 
-
-        <!-- Queue -->
-        <div class="queue">
-            <noscript>
-                <h2>Looks like you're not running javascript.</h2>
-                <div>
-                     You won't be able to see the queue, but feel free to submit things using the form below. (After submitting, hit back to get back here).
-                </div>
-                <form action="/nlp" method="POST" autocomplete="off" id="noscriptform">
-                    Search term/URL: 
-                    <input type="text" name="q"> 
-                    <input type="submit" value="Send to Musicazoo">
-                </form>
-            </noscript>
-
-            <h2>Add</h2>
-            <form action="#" method="GET" autocomplete="off" id="queueform">
-                <input type="text" name="addtxt" class="addtxt" id="addtxt"> <input type="submit" class="addsubmit disconnect-hide" id="addsubmit" value="Submit">
-		<!--<input type="submit" class="searchsubmit disconnect-hide" id="searchsubmit" value="Search">-->
-	    </form>
-            	<button id="searchbutton">Search Youtube</button>
-<!--
-            <h2>Upload</h2>
-            <form action="/upload/api" method="POST" autocomplete="off" enctype="multipart/form-data" id="uploadform">
-                <span> <input type="file" name="upfile" class="uploadfile" multiple> </span> <!-- Need span to reset file input! -->
-                <input type="submit" class="notquite-addsubmit disconnect-hide" id="addsubmit_upload" value="Submit">
-            </form>
-            <div class="upload-progress">
-                <div class="upload-progress-bar">
-            </div>
--->
+        <div class="display-area">
+            <div id="video"></div>
         </div>
-        <!-- Search results -->
-        <div class="results disconnect-hide"> </div>
 
         <!-- Disconnect notification -->
         <div class="reconnecting disconnect-show" style="display: none;">
@@ -212,20 +172,10 @@
         </div>
 
         <!-- Playlist/Queue -->
-        <div class="playlist disconnect-hide">
-            <h2>Playlist</h2>
-            <div id="video"></div>
-            <ol class="current">
-            </ol>
-            <ol class="background">
-            </ol>
-            <ol class="playlist">
-            </ol>
-        </div>
+        <ol class="current"> </ol>
 
         <!-- Volume -->
         <div class="vol-slider"></div>
-
     </div>
 </body>
 </html>
